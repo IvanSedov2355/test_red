@@ -56,7 +56,7 @@ class Stories(Base):
     soname_name = Column(String(1000))
     birthday = Column(String(200))
     lager = Column(String(200))
-    stories_ = Column(String(20000))
+    stories_ = Column(String(2000000000000000000))
     registration_time = Column(DateTime, server_default=func.now())
 
 Base.metadata.create_all(engine)
@@ -117,5 +117,5 @@ def stories():
 if __name__ == '__main__':
     backend_app.run(
         host='0.0.0.0',
-        port=5000
+        port=80
     )
