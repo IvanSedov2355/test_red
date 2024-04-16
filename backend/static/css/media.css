@@ -8,6 +8,11 @@
 body {
   background-color: #0EAD69;
     .center-both {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+ .center-both_ {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +24,11 @@ body {
     background-color: #3BCEAC;
   }
   .center-both {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.center-both_ {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,6 +40,11 @@ body {
     background-color: #FFD23F;
   },
  .center-both {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.center-both_ {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,6 +56,11 @@ body {
     background-color: #EE4266;
   },
   .center-both {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.center-both_ {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,10 +74,14 @@ body {
   },
 
   .center-both {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: left;
-
+}
+.center-both_ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 }
 
