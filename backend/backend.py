@@ -86,11 +86,7 @@ def result():
 @backend_app.route("/send_data_form", methods=["POST"], endpoint="send_data_form")
 def login():
     login_data = request.form
-    print(login_data['soname'], login_data['name'], login_data['soname_name'], login_data['date'],
-          login_data['country'], login_data['lager'], login_data['child'], login_data['username'])
-    temp = (login_data['soname'], login_data['name'], login_data['soname_name'], login_data['date'],
-          login_data['country'], login_data['lager'], login_data['child'], login_data['username'])
-    user = User(soname=login_data['soname'], name=login_data['name'], soname_name=login_data['soname_name'],
+    user = User(soname=login_data['soname'], name=login_data['name'],
                 birthday=login_data['date'], country=login_data['country'], lager=login_data['lager'],
                 children_count=login_data['child'], contact_data=login_data['username'])
     with Session() as sessions:
