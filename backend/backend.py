@@ -47,9 +47,6 @@ class User(Base):
     children_count = Column(String(200))
     contact_data = Column(String(200))
     registration_time = Column(DateTime, server_default=func.now())
-    ip_1 = Column(String(200))
-    ip_2 = Column(String(200))
-    ip_3 = Column(String(200))
 
 
 class Stories(Base):
@@ -61,9 +58,6 @@ class Stories(Base):
     lager = Column(String(200))
     stories_ = Column(String(2000000000000000000))
     registration_time = Column(DateTime, server_default=func.now())
-    ip_1 = Column(String(200))
-    ip_2 = Column(String(200))
-    ip_3 = Column(String(200))
 
 Base.metadata.create_all(engine)
 atexit.register(lambda: engine.dispose())
@@ -91,9 +85,6 @@ def result():
 
 @backend_app.route("/send_data_form", methods=["POST"], endpoint="send_data_form")
 def login():
-    ip_addr_1 = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
-    ip_addr_2 = request.environ['REMOTE_ADDR']
-    ip_addr_3 = request.remote_addr
     login_data = request.form
     print(login_data['soname'], login_data['name'], login_data['soname_name'], login_data['date'],
           login_data['country'], login_data['lager'], login_data['child'], login_data['username'])
@@ -101,7 +92,7 @@ def login():
           login_data['country'], login_data['lager'], login_data['child'], login_data['username'])
     user = User(soname=login_data['soname'], name=login_data['name'], soname_name=login_data['soname_name'],
                 birthday=login_data['date'], country=login_data['country'], lager=login_data['lager'],
-                children_count=login_data['child'], contact_data=login_data['username'], ip_addr_1=ip_addr_1, ip_addr_2=ip_addr_2, ip_addr_3=ip_addr_3)
+                children_count=login_data['child'], contact_data=login_data['username'])
     with Session() as sessions:
         sessions.add(user)
         sessions.commit()
@@ -109,12 +100,9 @@ def login():
 
 @backend_app.route("/send_stories", methods=["POST"], endpoint="send_stories")
 def stories():
-    ip_addr_1 = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
-    ip_addr_2 = request.environ['REMOTE_ADDR']
-    ip_addr_3 = request.remote_addr
     login_data_ = request.form
     stories_ = Stories(soname_name=login_data_['soname'], birthday=login_data_['date'], lager=login_data_['lager'],
-            stories_=login_data_['stories_'], ip_addr_1=ip_addr_1, ip_addr_2=ip_addr_2, ip_addr_3=ip_addr_3)
+            stories_=login_data_['stories_'])
     with Session() as sessions:
         sessions.add(stories_)
         sessions.commit()
