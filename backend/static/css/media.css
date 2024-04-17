@@ -4,9 +4,27 @@
   object-fit: cover;  /* сохраняем пропорции изображения */
 }
 
+footer {
+    padding: 100px 200px;
+    background: #666;
+    color: white;
+  }
+  a {
+    color: #00aaff;
+  }
 
-body {
-  background-color: #0EAD69;
+ .translate{
+    border: none;
+    background: transparent;
+    }
+    .translate:hover{
+background:#ffffff;
+color:#ffffff;
+border:none;
+transition: all 0.2s ease;
+}
+
+
     .center-both {
   display: block;
   justify-content: center;
@@ -17,12 +35,10 @@ body {
   justify-content: center;
   align-items: center;
 }
-}
+
 
 @media screen and (max-width: 1600px) {
-  body {
-    background-color: #3BCEAC;
-  }
+
   .center-both {
   display: block;
   justify-content: center;
@@ -36,9 +52,7 @@ body {
 }
 
 @media screen and (max-width: 1280px) {
-  body {
-    background-color: #FFD23F;
-  },
+
  .center-both {
   display: block;
   justify-content: center;
@@ -52,9 +66,7 @@ body {
 }
 
 @media screen and (max-width: 960px) {
-  body {
-    background-color: #EE4266;
-  },
+
   .center-both {
   display: block;
   justify-content: center;
@@ -69,9 +81,6 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  body {
-    background-color: #540D6E;
-  },
 
   .center-both {
   display: block;
@@ -92,6 +101,11 @@ img {
     max-height: 100%;
 }
 
+
+video {
+    max-width: 100%;
+    max-height: 100%;
+}
 .portrait {
     height: 80px;
     width: 30px;
